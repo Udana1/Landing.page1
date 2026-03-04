@@ -1,12 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title> Landing page</title>
-    </head>
-    <body>
-        <div>
-        <h1>This is a Website</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam labore temporibus hic ipsam quae aspernatur perspiciatis, repellendus ut sit, animi corrupti molestiae ea ratione earum architecto molestias est similique facilis.</p>
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Landing Page</title>
+    <style>
+        /* Minimalistic Luxury Color Palette */
+        :root {
+            --bg-color: #f5f5f7;          /* Soft off-white */
+            --primary-color: #1a1a1a;     /* Deep charcoal */
+            --accent-color: #bfa37f;      /* Warm gold */
+            --secondary-color: #6e6e73;   /* Soft gray */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --golden-ratio: 1.618;        /* for spacing */
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-color);
+            font-family: var(--font-body);
+            color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Container with golden ratio spacing */
+        .container {
+            max-width: 700px;
+            padding: calc(2rem * var(--golden-ratio));
+            background: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeSlideIn 1s forwards;
+        }
+
+        /* Heading */
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: calc(1rem * var(--golden-ratio));
+            color: var(--primary-color);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeSlideIn 1s forwards 0.3s;
+        }
+
+        h1 span.accent {
+            color: var(--accent-color);
+        }
+
+        /* Paragraph */
+        p {
+            font-size: 1.125rem;
+            line-height: calc(1.618 * 1rem);
+            color: var(--secondary-color);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideIn 1s forwards 0.6s;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            margin-top: calc(2rem * var(--golden-ratio));
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            color: #fff;
+            background: var(--accent-color);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideIn 1s forwards 0.9s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(191, 163, 127, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            p { font-size: 1rem; }
+            .btn { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
+        }
+    </style>
+    <!-- Optional: Google Fonts for luxury look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to <span class="accent">university</span> Website</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam labore temporibus hic ipsam quae aspernatur perspiciatis, repellendus ut sit, animi corrupti molestiae ea ratione earum architecto molestias est similique facilis.</p>
+        <a href="#" class="btn">Get Register</a>
+    </div>
+</body>
 </html>
